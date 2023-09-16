@@ -1,0 +1,37 @@
+record_dict = {}
+while True:
+    print("Choose an option:")
+    print("A. Add data")
+    print("B. Delete data")
+    print("C. End")
+    
+    choice = input("Enter your choice (A/B/C): ").upper()
+    
+    if choice == "A":
+        key = input("Enter key: ")
+        value = input("Enter value: ")
+        record_dict[key] = value
+        print("Data added successfully.")
+        print("Current records:")
+        for k, v in record_dict.items():
+            print(f"{k}: {v}")
+    
+    elif choice == "B":
+        key_to_delete = input("Enter key to delete: ")
+        if key_to_delete in record_dict:
+            del record_dict[key_to_delete]
+            print(f"Key '{key_to_delete}' deleted successfully.")
+            print("Current records:")
+            for k, v in record_dict.items():
+                print(f"{k}: {v}")
+        else:
+            print(f"Key '{key_to_delete}' not found in records.")
+    
+    elif choice == "C":
+        print("Thank you. Ending the program.")
+        break
+    
+    else:
+        print("Invalid choice. Please choose a valid option (A/B/C).")
+
+
